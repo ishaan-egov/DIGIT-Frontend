@@ -17,4 +17,5 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: cd micro-ui/web/micro-ui-internals/ && bash ./publish.sh
         env:
+          RELEASE_VERSION: ${{ github.event.head_commit.message }}
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
